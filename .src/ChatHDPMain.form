@@ -1,0 +1,40 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,64,64)
+  { exitButton Button
+    MoveScaled(45,57,16,4)
+    Text = ("Finalizar")
+  }
+  { userInput TextArea
+    MoveScaled(7,18,52,15)
+  }
+  { askButton Button
+    MoveScaled(24,34,16,4)
+    Text = ("Preguntar")
+  }
+  { chatHDPOutput TextLabel
+    MoveScaled(8,40,49,13)
+  }
+  { prompt TextLabel
+    MoveScaled(7,7,52,10)
+    Font = Font["Noto Music,+3"]
+    Text = ("Soy ChatHDP, la más Guachísima Inteligencia Artificial, en que le puedo ser útil?")
+  }
+  { femenino RadioButton genero
+    Name = "femenino"
+    MoveScaled(11,2,12,4)
+    Text = ("Femenino")
+  }
+  { masculino RadioButton genero
+    Name = "masculino"
+    MoveScaled(41,2,12,4)
+    Text = ("Masculino")
+    Value = True
+  }
+  { nobinarie RadioButton genero
+    Name = "nobinarie"
+    MoveScaled(26,2,16,4)
+    Text = ("No Binarie")
+  }
+}

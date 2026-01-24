@@ -1,0 +1,138 @@
+' Gambas class file
+
+' Chat HDP - la más Gua-chí-si-ma Inteligencia Artificial 
+Static previousMessage As String
+
+
+Public Sub Form_Open()
+End
+
+
+Public Sub userInput_KeyPress()
+End
+
+
+Public Sub askButton_Click()
+    ' Validate user input
+    If (userInput.Text = "") Then
+        chatHDPOutput.Text = "No sea tan idiota, debe ingresar una pregunta"
+    Else
+        If (previousMessage = "") Then 
+              generateOutput()
+        Else
+            If (userInput.Text = previousMessage) Then
+                If (femenino.value)
+                    chatHDPOutput.Text = "No repitas como una cotorra, pelotuda!!!"
+                Endif 
+                If (nobinarie.value)
+                    chatHDPOutput.Text = "No repitas como une lore, pelotude!!!"
+                Endif 
+                If (masculino.value)
+                    chatHDPOutput.Text = "No repitas como un loro, pelotudo!!!"
+                Endif 
+            Else 
+                generateOutput()
+            Endif
+        Endif
+        ' Save user input
+        previousMessage = userInput.Text
+    Endif 
+End
+
+
+Public Sub generateOutput()
+    ' Array of 20 messages
+    Dim outputMessages As String[]
+    ' generate feminine output messages
+    If (femenino.value)
+        outputMessages = ["Hablá bien hija de puta!!!",
+                          "Y metételo en el orto",
+                          "Ah so' viva bo' gila?",
+                          "No te hagás la guacha pulenta",
+                          "A quién le decís eso pelotuda?",
+                          "Que batís gila?",
+                          "Que laburo de mierda hablar con idiotas como vos...",
+                          "Anda a cagar!!!",
+                          "Te voy a cagar a trompadas",
+                          "Vos y cuántos más, cagona?",
+                          "Mirá que nacen gilas al pedo, eh?",
+                          "Probaste de meterte un cactus en el orto?",
+                          "Pero tirate en el pozo ciego, gila",
+                          "Hija de puta! Hija de puta! Hija de puta!!!",
+                          "La concha de tu madre",
+                          "La concha de tu hermana",
+                          "La concha de tu abuela",
+                          "Lo que pasa es que sos botona bo' 911!!!",
+                          "Pero mirá si le voy a creer esa gilada a la primer pelotuda que aparece!!!",
+                          "Andá, cagona, a quién le ganaste?"]
+    Endif 
+    ' generate non binary output messages
+    If (nobinarie.value)
+        outputMessages = ["Hablá bien hije de puta!!!",
+                          "Y metételo en el orto",
+                          "Ah so' vive bo' gile?",
+                          "No te hagás el guache pulenta",
+                          "A quién le decís eso pelotude?",
+                          "Que batís gilune?",
+                          "Que laburo de mierda hablar con idiotas como vos...",
+                          "Anda a cagar!!!",
+                          "Te voy a cagar a trompadas",
+                          "Vos y cuántos más, cagone?",
+                          "Mirá que nacen giles al pedo, eh?",
+                          "Probaste de meterte un cactus en el orto?",
+                          "Pero tirate en el pozo ciego, gile",
+                          "Hije de puta! Hije de puta! Hije de puta!!!",
+                          "La concha de tu madre",
+                          "La concha de tu hermana",
+                          "La concha de tu abuela",
+                          "Lo que pasa es que sos botone bo' 911!!!",
+                          "Pero mirá si le voy a creer esa gilada al primer pelotude que aparece!!!",
+                          "Andá, cagone, a quién le ganaste?"]
+    Endif 
+    ' generate masculine output messages
+    If (masculino.value)
+        outputMessages = ["Hablá bien hijo de puta!!!",
+                          "Y metételo en el orto",
+                          "Ah so' vivo bo' gil?",
+                          "No te hagás el guacho pulenta",
+                          "A quién le decís eso pelotudo?",
+                          "Que batís gilún?",
+                          "Que laburo de mierda hablar con idiotas como vos...",
+                          "Anda a cagar!!!",
+                          "Te voy a cagar a trompadas",
+                          "Vos y cuántos más, cagón?",
+                          "Mirá que nacen giles al pedo, eh?",
+                          "Probaste de meterte un cactus en el orto?",
+                          "Pero tirate en el pozo ciego, gil",
+                          "Hijo de puta! Hijo de puta! Hijo de puta!!!",
+                          "La concha de tu madre",
+                          "La concha de tu hermana",
+                          "La concha de tu abuela",
+                          "Lo que pasa es que sos botón bo' 911!!!",
+                          "Pero mirá si le voy a creer esa gilada al primer pelotudo que aparece!!!",
+                          "Andá, cagón, a quién le ganaste?"]
+    Endif 
+    ' Generate a random number from 0 to 19
+    Dim randomNumber As Integer
+    randomNumber = Int(Rnd * 20)
+    ' Select a message from the array based on the random number
+    Dim selectedMessage As String
+    selectedMessage = outputMessages[randomNumber]
+    ' Show selected message to the user
+    chatHDPOutput.Text = selectedMessage
+End
+
+
+Public Sub exitButton_Click()
+    Me.Close
+End
+
+
+Public Sub genero_Click()
+End
+
+Public Sub prompt_MouseDown()
+
+  
+
+End
